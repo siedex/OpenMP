@@ -1,0 +1,14 @@
+Lab 1/Assignment/.vs/Assignment/v15/
+Lab 1/Assignment/Debug/
+*.asm
+*.obj
+*.log
+*.cache
+*.idb
+*.pdb
+*.tlog
+*.suo
+*.db
+*.ipch
+*.exe
+*.ilk
