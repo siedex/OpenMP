@@ -40,7 +40,7 @@ int ArrayNumbersInBorders(double* arr, int n, double min, double max, bool useOm
 
 	#pragma omp parallel if (useOmp) shared(count)
 	{
-		#pragma omp parallel for reduction(+:count) 
+		#pragma omp for reduction(+:count) 
 		for (int i = 0; i < n; i++)
 		{
 			if (arr[i] >= min && arr[i] <= max)
@@ -76,6 +76,7 @@ double* RandomArray(int n)
 	for (int i = 0; i < n; i++)
 	{
 		arr[i] = std::rand() % 10000;
+		//arr[i] = i;
 	}
 
 	return arr;

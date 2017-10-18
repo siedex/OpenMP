@@ -11,7 +11,15 @@ void CountMatrixRows();
 void AvgArrayNeighbours(int count);
 void MultiplicateMatrixVector();
 
-int counts[] = { 100,1000,2000,4000,6000,8000,10000 };
+void CriticalSectionComparison();
+void PairwiseSum();
+void PrefixSum();
+void ComplexMatrix();
+void MinSearch();
+void BubbleSort();
+
+
+int counts[] = { 100,1000,2000,4000,6000,8000,10000, 100000, 1000000 };
 
 int main(int argc, char* argv[])
 {
@@ -22,16 +30,91 @@ int main(int argc, char* argv[])
 
 	std::srand(unsigned(std::time(0)));
 
-	MatrixMultiplying(k);
+	//MatrixMultiplying(k);
 	//NonZeroElements();
 	//NumbersInBorders();
 	//CountMatrixRows();
 	//AvgArrayNeighbours(count);
 	//MultiplicateMatrixVector();
+	
+	//CriticalSectionComparison();
+	//PairwiseSum();
+	PrefixSum();
+	//ComplexMatrix();
+	//MinSearch();
+	//BubbleSort();
 
 	getchar();
 	return 0;
 }
+
+void BubbleSort()
+{
+	//LaunchBubbleSort(10, true);
+	for (int i = 0; i < sizeof(counts) / sizeof(*counts); i++)
+	{
+		Log("==============================================================================");
+		double time1 = LaunchBubbleSort(counts[i], true);
+		double time2 = LaunchBubbleSort(counts[i], false);
+
+		Log("Array length: " + to_string(counts[i]));
+		Log("omp off / omp on : " + to_string(time2 / time1));
+		Log("==============================================================================");
+	}
+}
+
+void ComplexMatrix()
+{
+	for (int i = 0; i < sizeof(counts) / sizeof(*counts); i++)
+	{
+		Log("==============================================================================");
+		LaunchComplexMultiplication(counts[i], true);
+		LaunchComplexMultiplication(counts[i], false);
+		Log("==============================================================================");
+	}
+}
+
+void CriticalSectionComparison()
+{
+	for (int i = 0; i < sizeof(counts) / sizeof(*counts); i++)
+	{
+		Log("==============================================================================");
+		double time1 = LaunchCriticalSectionComparison(counts[i], true);
+		double time2 = LaunchCriticalSectionComparison(counts[i], false);
+
+		Log("Array length: " + to_string(counts[i]));
+		Log("omp off / omp on : " + to_string(time2 / time1));
+		Log("==============================================================================");
+	}
+}
+
+void PrefixSum()
+{
+	//LaunchPrefixSum(10, true);
+	for (int i = 0; i < sizeof(counts) / sizeof(*counts); i++)
+	{
+		Log("==============================================================================");
+		double time1 = LaunchPrefixSum(counts[i], true);
+		double time2 = LaunchPrefixSum(counts[i], false);
+
+		Log("Array length: " + to_string(counts[i]));
+		Log("omp off / omp on : " + to_string(time2 / time1));
+		Log("==============================================================================");
+	}
+}
+
+void PairwiseSum()
+{
+	//LaunchPairwiseSum(100, true);
+	for (int i = 0; i < sizeof(counts) / sizeof(*counts); i++)
+	{
+		Log("==============================================================================");
+		LaunchPairwiseSum(counts[i], true);
+		LaunchPairwiseSum(counts[i], false);
+		Log("==============================================================================");
+	}
+}
+
 
 void MultiplicateMatrixVector()
 {
@@ -96,6 +179,17 @@ void MatrixMultiplying(int k)
 		Log("==============================================================================");
 		LaunchMatrixCalculations(counts[i], counts[i], k, true);
 		LaunchMatrixCalculations(counts[i], counts[i], k, false);
+		Log("==============================================================================");
+	}
+}
+
+void MinSearch()
+{
+	for (int i = 0; i < sizeof(counts) / sizeof(*counts); i++)
+	{
+		Log("==============================================================================");
+		LaunchMinSearch(counts[i], true);
+		LaunchMinSearch(counts[i], false);
 		Log("==============================================================================");
 	}
 }

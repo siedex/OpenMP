@@ -143,8 +143,14 @@
   <ItemGroup>
     <ClCompile Include="ArrayNumbersBorders.cpp" />
     <ClCompile Include="AvgNeighbours.cpp" />
+    <ClCompile Include="BubbleSort.cpp" />
+    <ClCompile Include="ComplexMatrixMultiplication.cpp" />
+    <ClCompile Include="CriticalSectionComparison.cpp" />
     <ClCompile Include="MatrixRowsCount.cpp" />
+    <ClCompile Include="MinSection.cpp" />
     <ClCompile Include="NonZeroElements.cpp" />
+    <ClCompile Include="PairwiseSum.cpp" />
+    <ClCompile Include="PrefixSum.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="VectorMatrixMultiply.cpp" />
   </ItemGroup>

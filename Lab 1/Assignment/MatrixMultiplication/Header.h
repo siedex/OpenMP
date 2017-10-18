@@ -22,3 +22,10 @@ void LaunchNonZeroSelection(int n, int m, bool useOmp);
 void LaunchArrayNumbers(int n, bool useOmp);
 void LaunchArrayAvgNeghbours(int n, int count, bool useOmp);
 void LaunchVectorMultiplication(int n, int m, bool useOmp);
+
+int LaunchCriticalSectionComparison(int n, bool useOmp);
+void LaunchPairwiseSum(int n, bool useOmp);
+int LaunchPrefixSum(int n, bool useOmp);
+void LaunchComplexMultiplication(int n, bool useOmp);
+void LaunchMinSearch(int n, bool useOmp);
+int LaunchBubbleSort(int n, bool useOmp);

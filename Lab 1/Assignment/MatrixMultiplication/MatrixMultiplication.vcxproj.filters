@@ -13,25 +13,49 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы исходного кода\Lab1">
+      <UniqueIdentifier>{34e34940-bab5-41bd-a82f-0a18db32aee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Lab2">
+      <UniqueIdentifier>{7f7d4288-0ce1-47a5-b9d9-c451a8a8c072}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
     <ClCompile Include="NonZeroElements.cpp">
-      <Filter>Файлы исходного кода</Filter>
+      <Filter>Файлы исходного кода\Lab1</Filter>
     </ClCompile>
     <ClCompile Include="ArrayNumbersBorders.cpp">
-      <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
-    <ClCompile Include="MatrixRowsCount.cpp">
-      <Filter>Файлы исходного кода</Filter>
+      <Filter>Файлы исходного кода\Lab1</Filter>
     </ClCompile>
     <ClCompile Include="AvgNeighbours.cpp">
-      <Filter>Файлы исходного кода</Filter>
+      <Filter>Файлы исходного кода\Lab1</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixRowsCount.cpp">
+      <Filter>Файлы исходного кода\Lab1</Filter>
     </ClCompile>
     <ClCompile Include="VectorMatrixMultiply.cpp">
-      <Filter>Файлы исходного кода</Filter>
+      <Filter>Файлы исходного кода\Lab1</Filter>
+    </ClCompile>
+    <ClCompile Include="CriticalSectionComparison.cpp">
+      <Filter>Файлы исходного кода\Lab2</Filter>
+    </ClCompile>
+    <ClCompile Include="PairwiseSum.cpp">
+      <Filter>Файлы исходного кода\Lab2</Filter>
+    </ClCompile>
+    <ClCompile Include="PrefixSum.cpp">
+      <Filter>Файлы исходного кода\Lab2</Filter>
+    </ClCompile>
+    <ClCompile Include="ComplexMatrixMultiplication.cpp">
+      <Filter>Файлы исходного кода\Lab2</Filter>
+    </ClCompile>
+    <ClCompile Include="MinSection.cpp">
+      <Filter>Файлы исходного кода\Lab2</Filter>
+    </ClCompile>
+    <ClCompile Include="BubbleSort.cpp">
+      <Filter>Файлы исходного кода\Lab2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

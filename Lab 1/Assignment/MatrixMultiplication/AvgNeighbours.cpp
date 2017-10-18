@@ -37,7 +37,7 @@ void AvgNeighbourElements(double* arr, int n, int ngCount, bool useOmp)
 	{
 		int count = 1;
 		double sum = 0;
-		#pragma omp parallel for schedule(static, ngCount) private(count, sum)
+		#pragma omp for schedule(static, ngCount) private(count, sum)
 		for (int i = 0; i < n; i++)
 		{
 			sum+=arr[i];

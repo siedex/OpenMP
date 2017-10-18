@@ -32,7 +32,7 @@ void MultiplicateVectorMatrix(double** matrix, double* vector, int n, int m, boo
 
 	#pragma omp parallel if (useOmp)
 	{
-		#pragma omp parallel for 
+		#pragma omp for 
 		for (int i = 0; i < n; i++)
 		{
 			double sum = 0;
