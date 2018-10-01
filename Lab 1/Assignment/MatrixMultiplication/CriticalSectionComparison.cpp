@@ -43,7 +43,7 @@ int CountSignedValues(double* arr, int n, bool useOmp)
 		{
 			if (arr[i] < 0)
 			{
-				#pragma omp critical(name1)
+				#pragma omp critical(name1)// только 1 потоку
 				counts[0] += 1;
 			}
 			else if (arr[i] == 0)

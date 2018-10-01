@@ -38,26 +38,26 @@ int PrefixSum(double* arr, int n, bool useOmp)
 	System::Diagnostics::Stopwatch^ watch = gcnew System::Diagnostics::Stopwatch();
 
 	watch->Start();
-
-	#pragma omp parallel if (useOmp) default(none) private(i, last) shared(arrCopy, partial, temp, work, n, num_threads)
+	//none - всем переменным в параллельной области класс должен назначаться явно
+	#pragma omp parallel if (useOmp) default(none) private(i, last) shared(arrCopy, partial, temp, work, n, num_threads)//список  переменных общий для всех потоков
 	{
 		#pragma omp single
 		{
 			num_threads = omp_get_num_threads();
 			partial = new int[num_threads];
 			temp = new int[num_threads];
-			work = n / num_threads + 1; /*sets length of sub-arrays*/
+			work = n / num_threads + 1; /*задает длину подмассива*/
 		}
 
 		int threadNum = omp_get_thread_num();
-		/*calculate prefix-sum for each subarray*/
+		/*вычисляет преффикс-сумму для каждого подмассива*/
 		for (i = work * threadNum + 1; i < work * threadNum + work && i < n; i++)
 			arrCopy[i] += arrCopy[i - 1];
 
 		partial[threadNum] = arrCopy[i - 1];
 
 		#pragma omp barrier
-		/*calculate prefix sum for the array that was made from last elements of each of the previous sub-arrays*/
+		/*вычислить префиксную сумму для массива созданного из последних элементов каждой из предыдущих подматриц*/
 		for (i = 1; i < num_threads; i <<= 1) {
 			if (threadNum >= i)
 				temp[threadNum] = partial[threadNum] + partial[threadNum - i];
@@ -67,7 +67,7 @@ int PrefixSum(double* arr, int n, bool useOmp)
 		#pragma omp single
 			memcpy(partial + 1, temp + 1, sizeof(int) * (num_threads - 1));
 		}
-		/*update original array*/
+		/*обновить исходный массив*/
 		for (i = work * threadNum; i < (last = work * threadNum + work < n ? work * threadNum + work : n); i++)
 			arrCopy[i] += partial[threadNum] - arrCopy[last - 1];
 

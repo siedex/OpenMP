@@ -32,7 +32,7 @@ double MinValue(double* arr, int n, bool useOmp)
 		#pragma omp for
 		for (int i = 0; i < n; ++i)
 		{
-			#pragma omp flush(min)
+			#pragma omp flush(min)//obnovlyaet zna4eie peremennoi
 			if (arr[i] < min)
 			{
 				#pragma omp critical
